@@ -1,11 +1,11 @@
-public class book {
+public class Book {
     private int id;
     private String title;
     private String author;
     private String isbn;
     private boolean available;
 
-    public book(String author, String isbn, boolean available, String title, int id) {
+    public Book(String author, String isbn, boolean available, String title, int id) {
         this.author = author;
         this.isbn = isbn;
         this.available = available;
