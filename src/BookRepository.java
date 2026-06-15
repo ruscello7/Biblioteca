@@ -25,4 +25,20 @@ public class BookRepository {
         return null;
     }
 
+    public void update(Book book) {
+        Book existing = findById(book.getId());
+
+        existing.setTitle(book.getTitle());
+        existing.setAuthor(book.getAuthor());
+        existing.setIsbn(book.getIsbn());
+        existing.setAvailable(book.isAvailable());
+    }
+
+    public void remove(int id) {
+        Book existing = findById(id);
+        if (existing != null){
+            books.remove(existing);
+        }
+    }
+
 }
