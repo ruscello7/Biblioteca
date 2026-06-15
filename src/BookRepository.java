@@ -12,4 +12,17 @@ public class BookRepository {
 
     }
 
+    public List<Book> listAll() {
+        return books;
+    }
+
+    public Book findById(int id) {
+        for (Book book : books ) {
+            if (book.getId() == id) {
+                return book;
+            }
+        }
+        return null;
+    }
+
 }
