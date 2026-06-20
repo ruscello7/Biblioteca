@@ -6,11 +6,11 @@ public class Book {
     private boolean available;
 
     public Book(String author, String isbn, boolean available, String title, int id) {
+        this.id = id;
+        this.title = title;
         this.author = author;
         this.isbn = isbn;
         this.available = available;
-        this.title = title;
-        this.id = id;
     }
 
     public int getId() {
