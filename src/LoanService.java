@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class LoanService {
 
     private BookRepository bookRepository = new BookRepository();
@@ -15,6 +17,20 @@ public class LoanService {
             }
         else {
             System.out.println("Book is not available!");
+        }
+    }
+
+    public void returnBook(int loanId) {
+        Loan loan = loanRepository.findById(loanId);
+        loan.setReturned(true);
+        Book book = loan.getBook();
+        book.setAvailable(true);
+    }
+
+    public void listOpenLoans(){
+        List<Loan> openLoans = loanRepository.findOpenLoans();
+        for (Loan loan : openLoans) {
+            System.out.println(loan);
         }
     }
 }
