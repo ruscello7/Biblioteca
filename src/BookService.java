@@ -2,7 +2,11 @@ import java.util.List;
 
 public class BookService {
 
-private BookRepository repository = new BookRepository();
+    private BookRepository repository;
+    public BookService(BookRepository repository) {
+        
+        this.repository = repository;
+    }
 
 public void registerBook(String title, String author, String isbn) {
     Book book = new Book(author, isbn, true, title, 0);

@@ -2,9 +2,16 @@ import java.util.List;
 
 public class LoanService {
 
-    private BookRepository bookRepository = new BookRepository();
-    private UserRepository userRepository = new UserRepository();
-    private LoanRepository loanRepository = new LoanRepository();
+    private BookRepository bookRepository;
+    private UserRepository userRepository;
+    private LoanRepository loanRepository;
+
+    public LoanService(BookRepository bookRepository, UserRepository userRepository, LoanRepository loanRepository) {
+        this.bookRepository = bookRepository;
+        this.userRepository = userRepository;
+        this.loanRepository = loanRepository;
+    }
+
 
     public void createLoan(int bookId, int userId) {
         Book book = bookRepository.findById(bookId);

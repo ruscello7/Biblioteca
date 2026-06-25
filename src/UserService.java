@@ -2,7 +2,11 @@ import java.util.List;
 
 public class UserService {
 
-    private UserRepository repository = new UserRepository();
+    private UserRepository repository;
+
+    public UserService(UserRepository repository) {
+        this.repository = repository;
+    }
 
     public void registerUser(String name, String email, String cpf) {
         User user = new User(0, cpf, email, name);
