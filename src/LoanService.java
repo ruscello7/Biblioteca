@@ -15,8 +15,16 @@ public class LoanService {
 
     public void createLoan(int bookId, int userId) {
         Book book = bookRepository.findById(bookId);
+        if (book == null) {
+         System.out.println("Book not found!");
+         return;
+        }
         if (book.isAvailable()) {
             User user = userRepository.findById(userId);
+            if (user == null) {
+                System.out.println("User not found!");
+                return;
+            }
 
             Loan loan = new Loan(book, user, 0, "2026-06-20", "", false);
             book.setAvailable(false);
@@ -29,6 +37,10 @@ public class LoanService {
 
     public void returnBook(int loanId) {
         Loan loan = loanRepository.findById(loanId);
+        if (loan == null) {
+            System.out.println("Loan not found!");
+            return;
+        }
         loan.setReturned(true);
         Book book = loan.getBook();
         book.setAvailable(true);
