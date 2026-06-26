@@ -18,7 +18,7 @@ public class Main {
         int option;
         do {
             System.out.println("\n===  LIBRARY MENU  ===");
-            System.out.println("1 - Register boo k");
+            System.out.println("1 - Register book");
             System.out.println("2 - List books");
             System.out.println("3 - Register user");
             System.out.println("4 - Create loan");
