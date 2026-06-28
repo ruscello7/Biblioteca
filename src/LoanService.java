@@ -29,6 +29,7 @@ public class LoanService {
             Loan loan = new Loan(book, user, 0, "2026-06-20", "", false);
             book.setAvailable(false);
             loanRepository.add(loan);
+            System.out.println("Loan created successfully!");
             }
         else {
             System.out.println("Book is not available!");
